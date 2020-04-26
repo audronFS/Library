@@ -35,6 +35,16 @@ class Audiobook extends Book implements IPlayable {
     function setListeningLength($ListeningLength) {
         $this->ListeningLength = $ListeningLength;
     }
+    
+    public function Play(){
+    echo '<p>AudioBook: ' . parent::getTitle() . ' is PLAYING</P>';
+ }
+ public function Pause(){
+    echo '<p>AudioBook: ' . parent::getTitle() . ' is PAUSED</P>';
+ }
+ public function Stop(){
+    echo '<p>AudioBook: ' . parent::getTitle() . ' is STOPPED</P>';
+ }
 
     
 
