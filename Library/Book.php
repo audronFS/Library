@@ -1,10 +1,11 @@
-<?php
+git<?php
 
 namespace Library;
 
-class Book{
+class Book extends LibaryItem{
     
     function __construct($author, $publisher, $ISBN, $bookEdition) {
+        parent::__construct($title, $category, $deweyDecimal);
         $this->author = $author;
         $this->publisher = $publisher;
         $this->ISBN = $ISBN;
