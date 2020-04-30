@@ -16,6 +16,13 @@ Namespace Library;
  $this->duration = $duration;
  $this->producer = $director;
   }
+  
+    //Abstract method from LibraryItem
+    
+    public function searchItem($title) {
+        
+        //Create Database conexion
+    }
  // getters 
  public function getDuration(){
  return $this->duration;

@@ -1,4 +1,4 @@
-git<?php
+<?php
 
 namespace Library;
 
@@ -11,6 +11,15 @@ class Book extends LibraryItem{
         $this->ISBN = $ISBN;
         $this->bookEdition = $bookEdition;
     }
+    //Abstract method from LibraryItem
+    
+    public function searchItem($title) {
+        
+        //Create Database conexion
+    }
+
+    
+    //Getters and Setters
     function getAuthor() {
         return $this->author;
     }

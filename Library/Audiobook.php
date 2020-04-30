@@ -6,9 +6,17 @@ class Audiobook extends Book implements IPlayable {
     function __construct($author, $publisher, $ISBN, $bookEdition, $narrator, $ListeningLength) {      
 
         parent::__construct($author, $publisher, $ISBN, $bookEdition);
+      
         $this->narrator = $narrator;
         $this->ASIN = $ASIN;
         $this->ListeningLength = $ListeningLength;
+    }
+    
+      //Abstract method from LibraryItem
+    
+    public function searchItem($title) {
+        
+        //Create Database conexion
     }
     
        
