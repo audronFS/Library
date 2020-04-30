@@ -2,7 +2,7 @@ git<?php
 
 namespace Library;
 
-class Book extends LibaryItem{
+class Book extends LibraryItem{
     
     function __construct($author, $publisher, $ISBN, $bookEdition) {
         parent::__construct($title, $category, $deweyDecimal);

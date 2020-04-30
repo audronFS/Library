@@ -5,7 +5,7 @@ Namespace Library;
  
  //the cds attributes
 
- class Cd extends LibaryItem implements Iplayable {
+ class Cd extends LibraryItem implements Iplayable {
  
   private $artist;
   private $producer;

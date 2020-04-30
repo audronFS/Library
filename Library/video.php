@@ -5,7 +5,7 @@ Namespace Library;
  
  //the video attributes
 
- class Video extends LibaryItem implements IPlayable, IRentable {
+ class Video extends LibraryItem implements IPlayable, IRentable {
  
   private $director;
   private $duration;
