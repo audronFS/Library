@@ -4,7 +4,7 @@ namespace Library;
 
 class Book extends LibraryItem{
     
-    function __construct($author, $publisher, $ISBN, $bookEdition) {
+    function __construct($author, $publisher, $ISBN, $bookEdition,$title, $category, $deweyDecimal) {
         parent::__construct($title, $category, $deweyDecimal);
         $this->author = $author;
         $this->publisher = $publisher;
