@@ -15,7 +15,10 @@ Namespace Library;
  $this->category = $category;
  $this->deweyDecimal = $deweyDecimal;
  }
- 
+ //Abstract method
+ public abstract function searchItem($title);
+
+
 // getters only
  public function getTitle(){
  return $this->title;
