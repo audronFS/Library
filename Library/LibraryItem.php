@@ -5,7 +5,7 @@ Namespace Library;
  //the books need to be selected only
  //the books attributes
 
- abstract class LibaryItem{
+ abstract class LibraryItem{
  private $title;
  private $category;
  private $deweyDecimal;
