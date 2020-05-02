@@ -41,7 +41,7 @@
   </a>     
 </div>
    </div>        
-        <div class="container-fluid bg-1 text-center" style = "background-color: #00BFB2; padding: 10px; margin: 50px;">
+        <div class="container-fluid bg-1 text-center" style = "background-color: #00BFB2; padding: 10px; margin-bottom: 5px; margin-left: 50px; margin-right: 50px;">
             
             <h3 class="h3">Search bar</h3>
 
@@ -53,12 +53,13 @@
 	</div>
 </div>
         </div>
-                   <div id="resultados" class="container-fluid bg-2"  style = "background-color: #DCEDFF; padding: 200px; margin: 50px;">
-                    
+                   <div class="container-fluid bg-2" style = "background-color: #DCEDFF; padding: 1px; margin-top: 5px; margin-left: 50px; margin-right: 50px;">
+                       <div id="resultados" style="margin: 150px;"></div></div>
+                     
         </div> 
     
     </div>
-    </div>  
+   
    
     </body>
 </html>
