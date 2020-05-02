@@ -4,13 +4,30 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <title>Search Engine</title>
         <link href="StyleSheetforForm.css" rel="stylesheet" type="text/css"/>
-      
-        
+        <script src="jquery-1.12.2.min.js"></script>
+	<script>
+	$(document).ready(function(e) {
+		$("#buscar").keyup(function(e) {
+			var nombre = $("#buscar").val();
+			$.ajax({
+				type:"post",
+				url:"connection.php",
+				dataType:"html",
+				data:"nombre="+nombre,
+				success: function(dato)
+				{
+					$("#resultados").empty();
+					$("#resultados").append(dato);
+				}
+			});
+		});
+	});
+	</script>
     </head>
-        
+    <body>
     <div style="margin: 20px; padding: 10px; ">
     <div class="row">
     <div class=" col-sm-12 text-center" style = "background-color:#FFCCCC; padding: 10px; font-family: 'Rubik', sans-serif;">        
@@ -23,37 +40,28 @@
     <span>Sign Out</span>   
   </a>     
 </div>
-           </div>
-        
+   </div>        
         <div class="container-fluid bg-1 text-center" style = "background-color: #00BFB2; padding: 10px; margin: 50px;">
             
             <h3 class="h3">Search bar</h3>
 
 <div class="flexsearch">
-		<div class="flexsearch--wrapper">
-			<form class="flexsearch--form" action="#" method="post">
-				<div class="flexsearch--input-wrapper">
-					<input class="flexsearch--input" type="search" placeholder="search">
-				</div>
-				<input class="flexsearch--submit" type="submit" value="&#10140;"/>
-			</form>
-		</div>
+	<div class="flexsearch--wrapper">                   
+		<div class="flexsearch--input-wrapper">
+                         <input class="flexsearch--input" id="buscar" type="text" placeholder="search">                                   
+                </div>			
+	</div>
 </div>
-        
         </div>
-       
-                   <div class="container-fluid bg-2"  style = "background-color: #DCEDFF; padding: 200px; margin: 50px;">
-                 
+                   <div id="resultados" class="container-fluid bg-2"  style = "background-color: #DCEDFF; padding: 200px; margin: 50px;">
+                    
         </div> 
     
     </div>
     </div>  
-        <?php
-        // put your code here
-        ?>
+   
     </body>
 </html>
-
 
 
 
