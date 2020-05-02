@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php session_start();?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -18,9 +18,11 @@
         </div> 
         <div>
         <p>Welcome to OurLibrary </p>       
-        <a style="position:absolute; top:0; right:0; margin-top: 60px; margin-right: 100px;" href="#" class="sign-out pull-right">
-    <span>Sign Out</span>   
-  </a>     
+        
+            <button onclick="location.href = 'http://localhost/LibraryGit/WebPageLogin.php';" style="position:absolute; top:0; right:0; margin-top: 60px; margin-right: 100px;">Sign Out   
+    
+    </button>
+    
 </div>
    </div>        
         <div class="container-fluid bg-1 text-center" style = "background-color: #00BFB2; padding: 10px; margin-bottom: 5px; margin-left: 50px; margin-right: 50px;">
