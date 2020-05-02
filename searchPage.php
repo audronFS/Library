@@ -7,25 +7,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <title>Search Engine</title>
         <link href="StyleSheetforForm.css" rel="stylesheet" type="text/css"/>
-        <script src="jquery-1.12.2.min.js"></script>
-	<script>
-	$(document).ready(function(e) {
-		$("#buscar").keyup(function(e) {
-			var nombre = $("#buscar").val();
-			$.ajax({
-				type:"post",
-				url:"connection.php",
-				dataType:"html",
-				data:"nombre="+nombre,
-				success: function(dato)
-				{
-					$("#resultados").empty();
-					$("#resultados").append(dato);
-				}
-			});
-		});
-	});
-	</script>
+        <script src="resultFunction.js"></script>	
     </head>
     <body>
     <div style="margin: 20px; padding: 10px; ">
@@ -48,13 +30,13 @@
 <div class="flexsearch">
 	<div class="flexsearch--wrapper">                   
 		<div class="flexsearch--input-wrapper">
-                         <input class="flexsearch--input" id="buscar" type="text" placeholder="search">                                   
+                         <input class="flexsearch--input" onkeyup="resultFunction(this.value)" type="text" placeholder="search">                                   
                 </div>			
 	</div>
 </div>
         </div>
                    <div class="container-fluid bg-2" style = "background-color: #DCEDFF; padding: 1px; margin-top: 5px; margin-left: 50px; margin-right: 50px;">
-                       <div id="resultados" style="margin: 150px;"></div></div>
+                       <div id="txt" style="margin: 150px;"></div></div>
                      
         </div> 
     

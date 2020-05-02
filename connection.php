@@ -1,6 +1,6 @@
 <?php
 
-$query=$_POST['nombre'];
+$query=$_REQUEST['searching'];
 $servername = "localhost";
 $username = "root";
 $password = "";
