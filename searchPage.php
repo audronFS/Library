@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-
+<!DOCTYPE ht,ml>
+<?php $path = dirname(__DIR__)."\Library\\";
+      set_include_path( get_include_path().PATH_SEPARATOR.$path);?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -18,11 +19,22 @@
         </div> 
         <div>
         <p>Welcome to OurLibrary </p>       
-        <a style="position:absolute; top:0; right:0; margin-top: 60px; margin-right: 100px;" href="#" class="sign-out pull-right">
+        <a style="position:absolute; top:0; right:0; margin-top: 60px; margin-right: 100px;" href="Library\WebPageLogin.php" class="sign-out pull-right">
     <span>Sign Out</span>   
   </a>     
 </div>
-   </div>        
+   </div>
+        <!--<div class ="row">
+        <div class=" container-fluid bg-1 text-center" style = "background-color: #00BFB2; padding: 10px; margin-bottom: 5px; margin_left: 50px; margin-right:50px;">
+            First Name: <input  type="text"   name="fullName" class="form-control"  placeholder="Name"/> 
+        </div>
+        </div>
+       <div class ="row">
+        <div class=" container-fluid bg-1 text-center " style = "background-color: #00BFB2; padding: 10px; margin-bottom: 5px; margin_left: 50px; margin-right:50px;">
+            Account Number: <input  type="text"   name="accNum" class="form-control"  placeholder="Acc Num" />
+        </div>
+        </div>
+        </div>-->
         <div class="container-fluid bg-1 text-center" style = "background-color: #00BFB2; padding: 10px; margin-bottom: 5px; margin-left: 50px; margin-right: 50px;">
             
             <h3 class="h3">Search bar</h3>
