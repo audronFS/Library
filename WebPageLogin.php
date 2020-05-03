@@ -43,14 +43,18 @@
     
     
         <div class=" col-sm-6 text-center mx-auto margin rounded mx-auto d-block " style = "background-color: #00BFB2; padding: 40px; margin: 50px;">
-        <form action="" method="POST" style =" margin: 10px; " >
+        <form name="myform" onsubmit="return validateForm()" action="" method="POST" style =" margin: 10px; " >
             <h2> Register Member </h2>
-                    First Name: <input  type="text"   name="firstName" class="form-control"  placeholder="First Name" autofocus/>
-                    Last Name: <input  type="text"   name="lastName" class="form-control"  placeholder="Last Name" />
-                    Email: <input  type="email"   name="eMail" class="form-control" placeholder="Email" />
-                    Date of Birth: <input  type="date"   name="dateOfBirth" class="form-control"  />
-                    Home Address: <input  type="text"   name="homeAddress" class="form-control" placeholder="Current Address"   />
-                    Phone Number: <input  type="text"   name="phoneNum" class="form-control" placeholder="Contact Number"   />
+            First Name:<span style="color: red">*</span>
+            <input required name="Firstname" type="text"  class="form-control" placeholder="First Name"/>
+            Last Name:<span style="color: red">*</span>
+            <input required name="Lastname" type="text" class="form-control"  placeholder="Last Name" />
+            Email:<span style="color: red">*</span>
+            <input required name="Email" type="email"   name="eMail" class="form-control" placeholder="Email" />
+            Date of Birth: <input  type="date" class="form-control"  />
+            Home Address:<span style="color: red">*</span>
+            <input required name="Address" type="text"  class="form-control" placeholder="Current Address"   />
+            Phone Number: <input  type="text"   name="phoneNum" class="form-control" placeholder="Contact Number"   />
                 <br><br>
          
             <input class="form-check-input " type="checkbox" name ="gender"  value="female"/>
@@ -60,7 +64,7 @@
             Male:
            <br><br>
           
-            <input  type="submit" value="OK" class="btn btn-light" name ="submitbutton" style="height:50px; width:200px; "/>
+            <input  type="submit" value="OK" class="btn btn-light" style="height:50px; width:200px; "/>
            
         </form>
         </div>
