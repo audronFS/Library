@@ -72,7 +72,7 @@
         </form>
         </div>
         <div class=" col-sm-6 text-center mx-auto margin rounded mx-auto d-block " style = "background-color: #00BFB2; padding: 40px; margin: 50px;">
-            <a id = "REGISTER ACCOUNT"  href="WebPageRegister.php"class="btn btn-light" name ="register" style="height:50px; width:200px"> 
+            <a id = "REGISTER ACCOUNT"  href="\Library\Library\WebPageRegister.php"class="btn btn-light" name ="register" style="height:50px; width:200px"> 
             REGISTER ACCOUNT
             </a>
         </div>   
