@@ -7,7 +7,7 @@ $password = "";
 
 try {
     //1.OBJETO CONEXION
-    $pdo = new PDO("mysql:host=$servername;dbname=group_library_v4", $username, $password);
+    $pdo = new PDO("mysql:host=$servername;dbname=final_db", $username, $password);
     // set the PDO error mode to exception
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
     }
