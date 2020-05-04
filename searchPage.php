@@ -23,7 +23,7 @@
 <!--            <button onclick="location.href = 'http://localhost/LibraryGit/WebPageLogin.php';" style="position:absolute; top:0; right:0; margin-top: 60px; margin-right: 100px;">Sign Out   
     
     </button>-->
-        <a style="position:absolute; top:0; right:0; margin-top: 60px; margin-right: 100px;" href="Library\WebPageLogin.php" class="sign-out pull-right">
+        <a style="position:absolute; top:0; right:0; margin-top: 60px; margin-right: 100px;" href="Library\loginPage.php" class="sign-out pull-right">
     <span>Sign Out</span>   
   </a>     
 </div>
