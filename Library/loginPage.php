@@ -1,5 +1,5 @@
 <?php
-require "Login_function.php";   
+require "loginFunction.php";   
 ?>
 
 
@@ -40,7 +40,7 @@ and open the template in the editor.
         
      <div  class="row container-fluid" >
                <div id="yes"  class=" col-md-8 text-center rounded" style = "background-color: #D0F4DE; font-family: 'Raleway', cursive; font-size: 28px;
-                   cursor: pointer;" onclick="window.location = 'https://www.w3schools.com'">
+                   cursor: pointer;" onclick="window.location = '../searchPage.php'">
                    GO TO HOME PAGE  </div>                       <!-----add your link here-->
           
           
@@ -49,7 +49,7 @@ and open the template in the editor.
            </div>
         
                <div id="yes"  class=" col-md-3 text-center rounded" style = "background-color:#FFFEC7; font-family: 'Raleway', cursive; font-size: 28px;
-                   cursor: pointer;" onclick="window.location = 'https://www.w3schools.com'">
+                   cursor: pointer;" onclick="window.location = 'WebPageRegister.php'">
                    REGISTER </div>                            <!-----add your link here-->
           
           

@@ -1,5 +1,4 @@
 <?php
-       
  function Connect_db(){
 
          $DB_DSN = "mysql:host=localhost;dbname=jolibrary";
