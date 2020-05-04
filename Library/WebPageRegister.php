@@ -12,7 +12,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <title>Member Login</title>
+        <title>Member Register</title>
         <link href="StyleSheetforForm.css" rel="stylesheet" type="text/css"/>
         
     </head>
@@ -23,16 +23,13 @@
         <div class=" col-sm-12 text-center" style = "background-color:#FFCCCC; padding: 10px; font-family: 'Rubik', sans-serif;">
     
             <div class=" col-sm-12 text-center" style = "background-color: #EDEDED; font-family: 'Patua One', cursive;"> 
-             <h3> M. A . R . J </h3>
+             <h3> LIBRARY REGISTRATION </h3>
             </div>   
-        
-        <p>
-        Welcome to the library </p>
         </div>
        
-        <div class=" col-sm-6 text-center  mx-auto margin rounded mx-auto d-block"  style = "background-color: #DCEDFF; margin: 50px; max-width: 500px; max-height: 400px;">
+ <!--       <div class=" col-sm-6 text-center  mx-auto margin rounded mx-auto d-block"  style = "background-color: #DCEDFF; margin: 50px; max-width: 500px; max-height: 400px;">
         <form action="" method="POST" style =" margin: 10px;" >
-            <h2> Staff Login </h2>
+            <h2> Register Staff Member </h2>
              
             Library Area Code: <input  type="text"   name="name" class="form-control"  placeholder=" Area Code" autofocus/>
             User ID: <input  type="email"   name="email" class="form-control" />
@@ -42,40 +39,30 @@
             <input  type="submit" value="OK" class="btn btn-light" style="height:50px; width:200px; "/>
            
         </form>
-        </div>
+        </div>-->
     
     
-        <div class=" col-sm-6 text-center mx-auto margin rounded mx-auto d-block " style = "background-color: #00BFB2; padding: 40px; margin: 50px;">
-        <form name="myform" onsubmit="return validateForm()" action="" method="POST" style =" margin: 10px; " >
-            <h2> Register Member </h2>
-            First Name:<span style="color: red">*</span>
-            <input required name="Firstname" type="text"  class="form-control" placeholder="First Name"/>
-            Last Name:<span style="color: red">*</span>
-            <input required name="Lastname" type="text" class="form-control"  placeholder="Last Name" />
-            Email:<span style="color: red">*</span>
-            <input required name="Email" type="email"   name="eMail" class="form-control" placeholder="Email" />
-            Date of Birth: <input  type="date" class="form-control"  />
-            Home Address:<span style="color: red">*</span>
-            <input required name="Address" type="text"  class="form-control" placeholder="Current Address"   />
-            Phone Number: <input  type="text"   name="phoneNum" class="form-control" placeholder="Contact Number"   />
+        <div class=" col-sm-6 text-center mx-auto margin rounded mx-auto d-block " style = "background-color: #DCEDFF ; padding: 40px; margin: 50px;">
+        <form action="" method="POST" style =" margin: 10px; " >
+            <h2> Create Account </h2>
+                    First Name: <input  type="text"   name="firstName" class="form-control"  placeholder="First Name" autofocus/>
+                    Last Name: <input  type="text"   name="lastName" class="form-control"  placeholder="Last Name" />
+                    Email: <input  type="email"   name="eMail" class="form-control" placeholder="Email" />
+                    Date of Birth: <input  type="date"   name="dateOfBirth" class="form-control"  />
+                    Home Address: <input  type="text"   name="homeAddress" class="form-control" placeholder="Current Address"   />
+                    Phone Number: <input  type="text"   name="phoneNum" class="form-control" placeholder="Contact Number"   />
                 <br><br>
          
-            <input class="form-check-input " type="checkbox" name ="gender"  value="female"/>
-           Female:
+            <input class="form-check-input " type="checkbox" name ="staff"  value="staff member"/>
+           Staff :
             &nbsp;&nbsp; &nbsp; &nbsp;
-            <input class="form-check-input" type="checkbox" name="gender" value="male"/>
-            Male:
            <br><br>
           
-            <input  type="submit" value="OK" class="btn btn-light" style="height:50px; width:200px; "/>
+            <input  type="submit" value="OK" class="btn btn-light" name ="submitbutton" 
+                    style="height:50px; width:200px; "/>
            
         </form>
         </div>
-        <div class=" col-sm-6 text-center mx-auto margin rounded mx-auto d-block " style = "background-color: #00BFB2; padding: 40px; margin: 50px;">
-            <a id = "REGISTER ACCOUNT"  href="WebPageRegister.php"class="btn btn-light" name ="register" style="height:50px; width:200px"> 
-            REGISTER ACCOUNT
-            </a>
-        </div>   
 
     </div>
     </div>  
@@ -87,6 +74,7 @@
                 $dateOfBirth = filter_input(INPUT_POST,'dateOfBirth',FILTER_SANITIZE_STRING);
                 $homeAddress = filter_input(INPUT_POST,'homeAddress',FILTER_SANITIZE_STRING);
                 $phoneNum = filter_input(INPUT_POST,'phoneNum',FILTER_SANITIZE_STRING);
+                $staff_member = isset($_POST['staff']);
         
                 if (!empty($firstName)&& !empty($lastName)&& !empty($eMail)&& !empty($dateOfBirth)&& !empty($homeAddress)
                    && !empty($phoneNum)){
@@ -99,8 +87,10 @@
                         $_SESSION["phoneNum"]= $phoneNum;
                  
                         $foundAcc = (checkForAccount() > 0);
+                        //need to set staff member up - but not coded yet so I'll set to false
+                        $staffmember = FALSE;
                         if (!$foundAcc){
-                          setupAccount();
+                          setupAccount($staffmember);
                         }
                         
 

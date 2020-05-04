@@ -1,7 +1,11 @@
 <?php
-const DB_DSN = 'mysql:host=localhost;dbname=group_library_v4';
+namespace Library;
+
+const DB_DSN = 'mysql:host=localhost;dbname=library';
 const DB_USER = 'root';
 const DB_PASS = '';
+
+use \PDO;
 
 function checkForAccount(){
     //prepare a select statement for database using firstname, lastname, member ID
@@ -21,20 +25,12 @@ function checkForAccount(){
     }
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-    /*$stmt = $pdo->query( "SELECT id_member FROM library_member
-                         WHERE (first_name = 'Maisie') AND (last_name = 'Smith') 
-                                AND (DATE_FORMAT(birth_date,'%d-%m-%Y') = '12-03-1987')");*/
-    //retrieve the id member value for the user details if it exists
-    
-   /* $stmt = $pdo->query( "SELECT id_member FROM library_member
-                         WHERE (first_name = '$accountDetails[firstName]') AND (last_name = '$accountDetails[lastName]') 
-                                AND (birth_date = '$accountDetails[dateOfBirth]')");*/
     $stmt = $pdo->query( "SELECT * FROM library_member
                          WHERE (first_name = '$_SESSION[firstName]') AND (last_name = '$_SESSION[lastName]')"); 
     //simple display for results
     $num_rows = 0;
     foreach ($stmt as $row){
-        echo $row[0]." ".$row[1]." ".$row[2]." ".$row[3]." ".$row[4]." ".$row[6]."<br>";
+        //echo $row[0]." ".$row[1]." ".$row[2]." ".$row[3]." ".$row[4]." ".$row[6]."<br>";
         $num_rows++;
         }
      return $num_rows;
@@ -42,7 +38,7 @@ function checkForAccount(){
     unset($stmt);
 }
 
-function setUpAccount(){
+function setUpAccount($register_staff){
     try {
       // connect to database
       $pdo = new PDO(DB_DSN, DB_USER, DB_PASS);
@@ -50,6 +46,13 @@ function setUpAccount(){
 	die($e->getMessage()); 
     }
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    if($register_staff){
+        $stmt = $pdo->prepare("INSERT INTO staff_member(first_name,last_name,birth_date,address,phone_number,email) 
+		VALUES (:firstName,:lastName,:dateOfBirth,:homeAddress,:phoneNum,:eMail)");
+    }else{
+        $stmt = $pdo->prepare("INSERT INTO library_member(first_name,last_name,birth_date,address,phone_number,email) 
+		VALUES (:firstName,:lastName,:dateOfBirth,:homeAddress,:phoneNum,:eMail)");
+    }
     $stmt = $pdo->prepare("INSERT INTO library_member(first_name,last_name,birth_date,address,phone_number,email) 
 		VALUES (:firstName,:lastName,:dateOfBirth,:homeAddress,:phoneNum,:eMail)");
     $stmt->execute(['firstName' => $_SESSION['firstName'],'lastName' => $_SESSION['lastName'],'dateOfBirth' => $_SESSION['dateOfBirth'],'homeAddress' => $_SESSION['homeAddress'],'phoneNum' => $_SESSION['phoneNum'],'eMail' => $_SESSION['eMail']]);
@@ -57,9 +60,9 @@ function setUpAccount(){
     $stmt = $pdo->query( "SELECT * FROM library_member");
                          
     //simple display for results
-    foreach ($stmt as $row){
+    /*foreach ($stmt as $row){
         echo $row[0]." ".$row[1]." ".$row[2]." ".$row[3]." ".$row[4]." ".$row[6]."<br>";
-        }
+        }*/
     //disconnect from database
     unset($stmt);
 

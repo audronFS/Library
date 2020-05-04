@@ -24,6 +24,7 @@ require_once 'Librarian.php';
 require_once 'HeadLibrarian.php';
 require_once 'ILibrary.php';*/
 
+require_once "searchPage.php";
 use Library\Account;
 use Library\LibMember;
 use Library\Librarian;
@@ -46,7 +47,7 @@ function create_library_account($firstname, $lastname, $dateofbirth, $email, $ad
  }
 
 //Start the App
-echo 'Welcome to our Library Application'."\n";
+/*echo 'Welcome to our Library Application'."\n";
 echo 'Please enter each Library Member Detail when prompted'."\n";
 
 echo 'Please enter Members First Name'."\n";
@@ -129,7 +130,7 @@ use Library\Audiobook;
 require_once 'C:\xampp\htdocs\LibraryGit\Library\cd.php';
 use Library\Cd;
 require_once 'C:\xampp\htdocs\LibraryGit\Library\video.php';
-use Library\Video;
+use Library\Video;*/
 
 
 
