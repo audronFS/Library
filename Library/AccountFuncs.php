@@ -1,7 +1,7 @@
 <?php
 namespace Library;
 
-const DB_DSN = 'mysql:host=localhost;dbname=jolibrary';
+const DB_DSN = 'mysql:host=localhost;dbname=library';
 const DB_USER = 'root';
 const DB_PASS = '';
 

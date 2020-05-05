@@ -30,14 +30,14 @@
 -->
     <div  class="row container-fluid" >
             <div id="yes"  class=" col-md-4 text-center rounded" style = "background-color: pink; font-family: 'Raleway', cursive; font-size: 28px;
-                   cursor: pointer;" onclick="window.location = 'AddBook.php'"> 
+                   cursor: pointer;" onclick="window.location = '/Library/Library/AddBook.php'"> 
                 ADD BOOK TO DATABASE
              </div>
         
         <div id="yes"  class=" col-md-6 text-center rounded">  </div>
         
                <div id="yes"  class=" col-md-2 text-center rounded" style = "background-color: #D0F4DE; font-family: 'Raleway', cursive; font-size: 28px;
-                   cursor: pointer;" onclick="window.location = 'loginPage.php'">
+                   cursor: pointer;" onclick="window.location = '/Library/Library/loginPage.php'">
                    SIGN IN  </div>                       <!-----add your link here-->
 </div>
 

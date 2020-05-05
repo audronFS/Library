@@ -21,7 +21,7 @@ require_once "AddBookFunction.php";
         
         <div  class="row container-fluid" >   
            <div id="yes"  class=" col-md-4 text-center rounded" style = "background-color: #FFCCCC; font-family: 'Raleway', cursive; font-size: 28px;
-                   cursor: pointer; margin:20px" onclick="window.location = 'searchPage.php'">
+                   cursor: pointer; margin:20px" onclick="window.location = '../searchPage.php'">
                   <- GO BACK TO HOME PAGE </div> 
             <div class=" col-md-6 text-center" style = "background-color:white; margin: 5px">  
             </div>
