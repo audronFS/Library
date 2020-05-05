@@ -17,18 +17,15 @@ require_once "AddBookFunction.php";
         
     <div style="margin: 20px; padding: 10px; ">
     <div class="row">
-    <div class=" col-sm-12 text-center" style = "background-color:#FFCCCC; padding: 10px; font-family: 'Rubik', sans-serif;">
+    <div class=" col-sm-12 text-center" style = " padding: 10px; font-family: 'Rubik', sans-serif;">
         
-           <div class=" col-sm-12 text-center" style = "background-color: #EDEDED; font-family: 'Patua One', cursive;"> 
-           <h3> M. A . R . J </h3>
-    </div>   
-        
-        
-    <p>Welcome to the library </p>
-    </div>
-       
-
-    
+        <div  class="row container-fluid" >   
+           <div id="yes"  class=" col-md-4 text-center rounded" style = "background-color: #FFCCCC; font-family: 'Raleway', cursive; font-size: 28px;
+                   cursor: pointer; margin:20px" onclick="window.location = '../searchPage.php'">
+                  <- GO BACK TO HOME PAGE </div> 
+            <div class=" col-md-6 text-center" style = "background-color:white; margin: 5px">  
+            </div>
+         </div>
         <div class=" col-sm-6 text-center mx-auto margin rounded mx-auto d-block " style = "background-color: #00BFB2; padding: 40px; margin: 50px;">
         <form action="" method="POST" style =" margin: 10px; " >
             <h2> Add a new book</h2>

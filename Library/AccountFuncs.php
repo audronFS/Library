@@ -46,23 +46,30 @@ function setUpAccount($register_staff){
 	die($e->getMessage()); 
     }
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    if($register_staff){
-        $stmt = $pdo->prepare("INSERT INTO staff_member(first_name,last_name,birth_date,address,phone_number,email) 
-		VALUES (:firstName,:lastName,:dateOfBirth,:homeAddress,:phoneNum,:eMail)");
+    
+      
+    if($register_staff){  
+        $stmt = $pdo->prepare("INSERT INTO staff_member(first_name,last_name,birth_date,address,phone_number,email, hash_pw, password) 
+		VALUES (:firstName,:lastName,:dateOfBirth,:homeAddress,:phoneNum,:eMail,:hash, :password)");
+          $stmt->bindParam(":hash", $hash);
+        
     }else{
-        $stmt = $pdo->prepare("INSERT INTO library_member(first_name,last_name,birth_date,address,phone_number,email) 
-		VALUES (:firstName,:lastName,:dateOfBirth,:homeAddress,:phoneNum,:eMail)");
+        
+        $hash = password_hash($_SESSION["password"], PASSWORD_DEFAULT);
+        
+        $stmt = $pdo->prepare("INSERT INTO library_member(first_name,last_name,birth_date,address,phone_number,email, hash_pw, password) 
+		VALUES (:firstName,:lastName,:dateOfBirth,:homeAddress,:phoneNum,:eMail,:hash, :password)");
+  
     }
-    $stmt = $pdo->prepare("INSERT INTO library_member(first_name,last_name,birth_date,address,phone_number,email) 
-		VALUES (:firstName,:lastName,:dateOfBirth,:homeAddress,:phoneNum,:eMail)");
-    $stmt->execute(['firstName' => $_SESSION['firstName'],'lastName' => $_SESSION['lastName'],'dateOfBirth' => $_SESSION['dateOfBirth'],'homeAddress' => $_SESSION['homeAddress'],'phoneNum' => $_SESSION['phoneNum'],'eMail' => $_SESSION['eMail']]);
+        
+    $stmt->execute(['firstName' => $_SESSION['firstName'],'lastName' => $_SESSION['lastName'],'dateOfBirth' => $_SESSION['dateOfBirth'],'homeAddress' => $_SESSION['homeAddress'],'phoneNum' => $_SESSION['phoneNum'],'eMail' => $_SESSION['eMail'],['hash_pw' => $hash], 'password' =>$_SESSION["password"]]);
     
     $stmt = $pdo->query( "SELECT * FROM library_member");
                          
     //simple display for results
-    /*foreach ($stmt as $row){
+    foreach ($stmt as $row){
         echo $row[0]." ".$row[1]." ".$row[2]." ".$row[3]." ".$row[4]." ".$row[6]."<br>";
-        }*/
+        }
     //disconnect from database
     unset($stmt);
 

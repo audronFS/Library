@@ -1,8 +1,3 @@
-<?php
-require "loginFunction.php";   
-?>
-
-
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -22,7 +17,10 @@ and open the template in the editor.
                   font-size: 40px }
             form {font-family: 'Work Sans', sans-serif;
                   font-size: 28px;padding-left:10px}
-              #yes:hover {opacity:0.5;}          
+              #yes:hover {opacity:0.5;}        
+              .font{font-size: 20px;
+                    font-weight:bold;
+              color: white;}
         </style>
          <title>HTTP POST</title>
     </head>
@@ -50,7 +48,7 @@ and open the template in the editor.
         
                <div id="yes"  class=" col-md-3 text-center rounded" style = "background-color:#FFFEC7; font-family: 'Raleway', cursive; font-size: 28px;
                    cursor: pointer;" onclick="window.location = 'WebPageRegister.php'">
-                   REGISTER </div>                            <!-----add your link here-->
+                   NEED TO REGISTER? </div>                            <!-----add your link here-->
           
           
           
@@ -69,7 +67,7 @@ and open the template in the editor.
            <br>
             PASSWORD <input  type="text"   name="spassword" class="form-control form-control-lg" />
             <br><br>
-            <input  type="submit" name="s_enter" value="LOGIN" class="btn btn-light" style="height:50px; width:200px;  font-size: 20px"/>
+            <input  type="submit" name="s_enter" value="LOGIN" class="btn btn-secondary font" style="height:50px; width:200px;  font-size: 20px"/>
         </form>
             </div>
         
@@ -87,8 +85,7 @@ and open the template in the editor.
             PASSWORD <input  type="text"   name="apassword" class="form-control form-control-lg" />
             <br><br>
          
-            <input  type="submit" name ="a_enter" value="LOGIN" class="btn btn-light " style="height:50px; width:200px; font-size: 20px;"/>
-           
+            <input  type="submit" name ="a_enter" value="LOGIN" class="btn btn-secondary font " style="height:50px; width:200px; font-size: 20px;"/>
         </form>
         </div>
             

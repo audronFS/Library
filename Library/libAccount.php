@@ -1,10 +1,11 @@
 <?php
 
  include_once "libInterface.php";
-  
+ 
  
         $role = "Basic Account";
                 
+       
        class Account implements \Needaccess{
          protected $name;
          protected $surname;
@@ -15,7 +16,8 @@
          protected $member_ID;
          protected $libNO;
          protected $password;
-  
+ 
+         
          public function __construct($name, $surname, $adress, $tel, $dob, $member_Id, $email, $libNO, $password){ 
           $this-> name = $name;
           $this-> surname = $surname;

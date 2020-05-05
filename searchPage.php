@@ -14,18 +14,33 @@
     <body>
     <div style="margin: 20px; padding: 10px; ">
     <div class="row">
-    <div class=" col-sm-12 text-center" style = "background-color:#FFCCCC; padding: 10px; font-family: 'Rubik', sans-serif;">        
+    <div class=" col-sm-12 text-center" style = "background-color:#white; padding: 10px; font-family: 'Rubik', sans-serif;">        
            <div class=" col-sm-12 text-center" style = "background-color: #EDEDED; font-family: 'Patua One', cursive;"> 
            <h3> OurLibrary </h3>
         </div> 
         <div>
-        <p>Welcome to OurLibrary </p>       
+          
 <!--            <button onclick="location.href = 'http://localhost/LibraryGit/WebPageLogin.php';" style="position:absolute; top:0; right:0; margin-top: 60px; margin-right: 100px;">Sign Out   
     
     </button>-->
-        <a style="position:absolute; top:0; right:0; margin-top: 60px; margin-right: 100px;" href="Library\loginPage.php" class="sign-out pull-right">
+<!--
+        <a style="position:absolute; top:0; right:0; margin-top: 60px; margin-right: 100px;" href="Library\WebPageLogin.php" class="sign-out pull-right">
     <span>Sign Out</span>   
-  </a>     
+  </a> 
+-->
+    <div  class="row container-fluid" >
+            <div id="yes"  class=" col-md-4 text-center rounded" style = "background-color: pink; font-family: 'Raleway', cursive; font-size: 28px;
+                   cursor: pointer;" onclick="window.location = '/Library/Library/AddBook.php'"> 
+                ADD BOOK TO DATABASE
+             </div>
+        
+        <div id="yes"  class=" col-md-6 text-center rounded">  </div>
+        
+               <div id="yes"  class=" col-md-2 text-center rounded" style = "background-color: #D0F4DE; font-family: 'Raleway', cursive; font-size: 28px;
+                   cursor: pointer;" onclick="window.location = '/Library/Library/loginPage.php'">
+                   SIGN IN  </div>                       <!-----add your link here-->
+</div>
+
 </div>
    </div>
         <!--<div class ="row">
