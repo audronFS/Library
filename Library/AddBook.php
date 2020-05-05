@@ -26,8 +26,6 @@ require_once "AddBookFunction.php";
             <div class=" col-md-6 text-center" style = "background-color:white; margin: 5px">  
             </div>
          </div>
-
-    
         <div class=" col-sm-6 text-center mx-auto margin rounded mx-auto d-block " style = "background-color: #00BFB2; padding: 40px; margin: 50px;">
         <form action="" method="POST" style =" margin: 10px; " >
             <h2> Add a new book</h2>

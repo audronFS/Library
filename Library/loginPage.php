@@ -86,7 +86,6 @@ and open the template in the editor.
             <br><br>
          
             <input  type="submit" name ="a_enter" value="LOGIN" class="btn btn-secondary font " style="height:50px; width:200px; font-size: 20px;"/>
-           
         </form>
         </div>
             
