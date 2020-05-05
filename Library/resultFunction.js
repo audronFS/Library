@@ -10,7 +10,7 @@ function resultFunction(str) {
                 document.getElementById("txt").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "connection.php?searching="+str, true);
+        xmlhttp.open("GET", "Library/connection.php?searching="+str, true);
         xmlhttp.send();
     }
     }
